@@ -1,0 +1,62 @@
+﻿<!-- não implementado -->
+<page-header page-title="nav.agenda" breadcrumb="['nav.agenda']"></page-header>
+
+<div class="wrapper wrapper-content">
+    <div class="animated fadeInLeft">
+        <div class="ibox" id="calendar">
+            <div class="ibox-title">
+                <h5 ng-i18n="page.calendar.list_data"></h5>
+                <div class="ibox-tools">
+                    <button class="btn btn-xs btn-blue btn-outline m-t-n-xs m-r-xs" data-toggle="modal" data-target="#edit" ng-click="viewModel.functions.newItem()"><i class="fa fa-plus fa-width-fixed"></i></button>
+                </div>
+            </div>
+            <div class="ibox-content ui-calendar">
+                <div ui-calendar="viewModel.calendarConfig" calendar="agenda" ng-model="viewModel.listItems"></div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" role="dialog" tabindex="-1" id="edit" class="modal inmodal fade in">
+            <div class="modal-dialog">
+                <div class="modal-content animated bounceInRight">
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" ng-i18n="{{ viewModel.itemEditing.action=='edit' ? 'page.calendar.edit_data' : 'page.calendar.new_data' }}"></h4>
+                    </div>
+                    <form ng-submit="viewModel.functions.saveItem()">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label class="control-label" ng-i18n="label.description"></label>
+                                    <input type="text" class="form-control" ng-model="viewModel.itemEditing.Description" />
+                                </div>
+                                <div class="col-xs-6 form-group">
+                                    <label class="control-label" ng-i18n="label.date"></label>
+                                    <input class="form-control" date-range-picker ng-model="viewModel.itemEditing.Date" options="viewModel.dateConfig" />
+                                </div>
+                                <div class="col-xs-6 form-group">
+                                    <label class="control-label" ng-i18n="page.calendar.color"></label>
+                                    <div class="input-group">
+                                        <input colorpicker type="text" ng-model="viewModel.itemEditing.Color" class="form-control" maxlength="7" />
+                                        <span class="input-group-addon"><i class="fa fa-square" ng-style="{'color': viewModel.itemEditing.Color||'#FFF'}"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 form-group">
+                                    <label class="control-label" ng-i18n="page.calendar.start"></label>
+                                    <input class="form-control" ng-model="viewModel.itemEditing.Start" ng-time ng-mask="2?9:5?9" />
+                                </div>
+                                <div class="col-xs-6 form-group">
+                                    <label class="control-label" ng-i18n="page.calendar.end"></label>
+                                    <input class="form-control" ng-model="viewModel.itemEditing.End" ng-time ng-mask="2?9:5?9" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button data-dismiss="modal" class="btn btn-white" type="button" ng-i18n="label.cancel"></button>
+                            <button class="btn btn-primary" type="submit" ng-i18n="label.save"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

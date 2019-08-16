@@ -1,0 +1,185 @@
+﻿<page-header page-title="Pedido"></page-header>
+
+<div class="wrapper wrapper-content">
+    <div class="animated fadeInRight">
+        <div class="ibox" id="header">
+            <div class="ibox-title"><h5 ng-i18n="{{ viewModel.itemEditing.action=='new'? 'Novo pedido':'Editar pedido' }}"></h5></div>
+            <div class="ibox-content">
+                <form class="form-horizontal" ng-submit="viewModel.functions.saveItem()">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" ng-i18n="Data"></label>
+                        <div class="col-xs-4">
+                            <p class="form-control-static" ng-moment="viewModel.itemEditing.Date" format="L"></p>
+                        </div>
+                        <label class="col-xs-2 control-label"><span ng-i18n="Nº pedido" ng-if="viewModel.itemEditing.action=='edit'"></span></label>
+                        <div class="col-xs-4">
+                            <p class="form-control-static" ng-if="viewModel.itemEditing.action=='edit'"
+                               ng-bind="viewModel.itemEditing.Id"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" ng-i18n="label.client"></label>
+                        <div class="col-xs-4">
+                            <ui-select ng-model="viewModel.itemEditing.Client" theme="bootstrap"
+                                       ng-change="viewModel.itemEditing.ClientId = viewModel.itemEditing.Client.Id">
+                                <ui-select-match placeholder="{{'Digite 3 letras' | ngI18n}}">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="item in viewModel.clients | filter: $select.search"
+                                                   refresh="viewModel.functions.getClients($select.search)" minimum-input-length="3"
+                                                   refresh-delay="300">
+                                    <div ng-bind-html="item.Name | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="col-xs-6" ng-show="viewModel.itemEditing.Client">
+                            <label class="col-xs-4 control-label" ng-i18n="label.email"></label>
+                            <div class="col-xs-8">
+                                <p class="form-control-static" ng-bind="viewModel.itemEditing.Client.Email"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6" ng-show="viewModel.itemEditing.Client">
+                            <label class="col-xs-4 control-label" ng-i18n="label.telephone"></label>
+                            <div class="col-xs-8">
+                                <p class="form-control-static" ng-model="viewModel.itemEditing.Client.Telephone" ng-bind="viewModel.itemEditing.Client.Telephone" mask="(99) 9?9999-9999"></p>
+                            </div>
+                        </div>
+                        <label class="col-xs-2 control-label" ng-i18n="Total"></label>
+                        <div class="col-xs-4">
+                            <p class="form-control-static text-primary font-bold" ng-numeral="viewModel.itemEditing.Total" format="$ 0,0.00"></p>
+                        </div>
+                    </div>
+                    <div ng-include="'buttons'"></div>
+                </form>
+            </div>
+        </div>
+        <div class="ibox" id="detail">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-xs-10"><h5 ng-i18n="Produtos"></h5></div>
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-block btn-outline btn-blue btn-sm m-t-n-xs"
+                                data-toggle="modal" data-target="#addDetailItem">
+                            <i class="fa fa-plus"></i>
+                            <span ng-i18n="Item"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <!-- https://github.com/angular-ui/bootstrap/wiki/Migration-guide-for-prefixes -->
+                <table class="table table-hover form-xs">
+                    <thead>
+                        <tr>
+                            <th width="20px">#</th>
+                            <th width="40%">Produto</th>
+                            <th class="text-right">Quantidade</th>
+                            <th class="text-right">Preço</th>
+                            <th class="text-right">Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in viewModel.itemEditing.OrderItens" ng-click="fake.$show();">
+                            <td>{{$index + 1}}</td>
+                            <td><span>{{ item.Product.Name }}</span></td>
+                            <!--<td><span editable-select="item.Product" e-form="fake" e-ng-options="p as p.Name for p in viewModel.products track by p.Id">{{ item.Product.Name }}</span></td>-->
+                            <td class="text-right"><span editable-number="item.Amount" e-form="fake">{{ item.Amount || 0 }}</span></td>
+                            <td class="text-right"><span ng-numeral="item.Product.Price" format="$ 0.00"></span></td>
+                            <td class="text-right"><span ng-numeral="item.Amount * item.Product.Price || 0" format="$ 0.00"></span></td>
+                            <td class="text-center">
+                                <a class="btn btn-xs btn-danger"
+                                   ng-i18n-title="label.remove"
+                                   ng-click="viewModel.functions.removeItemOnDetailList = viewModel.functions.askConfirmRemoveItemOnDetailList($index)" data-toggle="modal" data-target="#deleteConfirm">
+                                    <i class="fa fa-trash fa-small fa-width-fixed"></i>
+                                </a>
+                                <form editable-form name="fake" onaftersave="saveLine(item)" buttons="no" blur="submit"></form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th class="text-right" ng-i18n="Total"></th>
+                            <td class="text-right text-primary font-bold"><span ng-numeral="viewModel.functions.calcTotal()" format="$ 0,0.00"></span></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="form-horizontal clearfix">
+                    <div ng-include="'buttons'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div aria-hidden="true" role="dialog" tabindex="-1" id="addDetailItem" class="modal inmodal fade">
+        <div class="modal-dialog">
+            <div class="modal-content animated bounceInRight">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title"><span ng-i18n="Adicionando novo item ao pedido"></span></h4>
+                </div>
+                <form ng-submit="viewModel.functions.addItemOnDetailList()">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label ng-i18n="Produto"></label>
+                            <ui-select ng-model="viewModel.itemDetailEditing.Product" theme="bootstrap"
+                                       ng-change="viewModel.itemDetailEditing.ProductId = viewModel.itemDetailEditing.Product.Id">
+                                <ui-select-match placeholder="{{'Digite 3 letras' | ngI18n}}">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="item in viewModel.products | filter: $select.search"
+                                                   refresh="viewModel.functions.getProducts($select.search)" minimum-input-length="3"
+                                                   refresh-delay="300">
+                                    <div ng-bind-html="item.Name | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label ng-i18n="Quantidade"></label>
+                            <input type="number" required class="form-control" ng-model="viewModel.itemDetailEditing.Amount" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-white" type="button" ng-i18n="label.cancel"></button>
+                        <button class="btn btn-primary" ng-i18n="label.add"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div aria-hidden="true" role="dialog" tabindex="-1" id="deleteConfirm" class="modal inmodal fade">
+        <div class="modal-dialog">
+            <div class="modal-content animated bounceIn">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">
+                        <i class="fa fa-trash"></i>
+                        <span ng-i18n="alerts:confirm.delete"></span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <h3 class="text-center" ng-i18n="alerts:confirm.sure_delete"></h3>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-white" type="button" ng-i18n="label.cancel"></button>
+                    <button class="btn btn-danger" type="button" ng-click="viewModel.functions.removeItemOnDetailList()" ng-i18n="label.remove"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script id="buttons" type="text/ng-template">
+    <div class="form-group">
+        <div class="col-xs-12 text-right">
+            <button type="button" class="btn btn-primary" ng-i18n="Salvar pedido" ng-click="viewModel.functions.saveItem()"></button>
+            <button type="button" class="btn btn-white" ng-i18n="Voltar" ui-sref="orders-list"></button>
+        </div>
+    </div>
+</script>

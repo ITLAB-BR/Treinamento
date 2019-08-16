@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITLab.Treinamento.Api.Tests", "ITLab.TreinamentoApi.Tests\ITLab.Treinamento.Api.Tests.csproj", "{544D1CD8-D3A6-4A32-8450-28AC450DE7E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITLab.Treinamento.Api", "ITLab.Treinamento.Api\ITLab.Treinamento.Api.csproj", "{E30AAA25-7768-4C0A-96E7-74C4736CCE28}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ITLab.Treinamento.Database", "ITLab.Treinamento.Database\ITLab.Treinamento.Database.sqlproj", "{EE89A3DB-FFEE-4026-BD43-D79CE166FA25}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ITLab.Treinamento.Web", "ITLab.Treinamento.Web", "{0E71E40B-8B5C-4F1D-89F1-40671FB1A710}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58925"
+		Debug.AspNetCompiler.PhysicalPath = "ITLab.Treinamento.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58925\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58925"
+		Release.AspNetCompiler.PhysicalPath = "ITLab.Treinamento.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58925\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58925"
+		SlnRelativePath = "ITLab.Treinamento.Web\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{544D1CD8-D3A6-4A32-8450-28AC450DE7E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544D1CD8-D3A6-4A32-8450-28AC450DE7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544D1CD8-D3A6-4A32-8450-28AC450DE7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544D1CD8-D3A6-4A32-8450-28AC450DE7E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30AAA25-7768-4C0A-96E7-74C4736CCE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30AAA25-7768-4C0A-96E7-74C4736CCE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30AAA25-7768-4C0A-96E7-74C4736CCE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30AAA25-7768-4C0A-96E7-74C4736CCE28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE89A3DB-FFEE-4026-BD43-D79CE166FA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE89A3DB-FFEE-4026-BD43-D79CE166FA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE89A3DB-FFEE-4026-BD43-D79CE166FA25}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EE89A3DB-FFEE-4026-BD43-D79CE166FA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE89A3DB-FFEE-4026-BD43-D79CE166FA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE89A3DB-FFEE-4026-BD43-D79CE166FA25}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0E71E40B-8B5C-4F1D-89F1-40671FB1A710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E71E40B-8B5C-4F1D-89F1-40671FB1A710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E71E40B-8B5C-4F1D-89F1-40671FB1A710}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E71E40B-8B5C-4F1D-89F1-40671FB1A710}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D05407B8-981C-4B77-9ECA-0E1CDE9F12EB}
+	EndGlobalSection
+EndGlobal

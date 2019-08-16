@@ -1,0 +1,34 @@
+i18n=> | en | pt-BR | es
+
+error=>
+	color_primary_is_required | The primary color is required | A cor primária é obrigatória | El color primario es requerido
+	invalid_color_primary | Invalid primary color | Cor primária inválida | Color primario inválido
+	color_secondary_is_required | The secondary color is required | A cor secundária é obrigatória | El color secundario es requerido
+	invalid_color_secondary | Invalid secondary color | Cor secundária inválida | Color secundario inválido
+
+	other_productgroup_already_exists|Product group already exists|Grupo de produtos já existe|Grupo de productos ya existe
+	productgroup_not_found|Product group was not found|Grupo de produtos não foi encontrado|Grupo de productos no fue encontrado
+
+	country_not_exists|Country not found|País não encontrado|País no encontrado
+	other_country_already_exists|This country already exists|Este país já está cadastrado|Este país ya está cadastrado
+	country_not_found|Country not found|País não encontrado|País no encontrado
+
+	other_client_already_exists|This client already exists|Este cliente já está cadastrado|Este cliente ya está cadastrado
+	client_not_found|Client not found|Cliente não encontrado|Cliente no encontrado
+
+	invalid_telephone|Invalid telephone|Telefone inválido|Teléfono inválido
+	invalid_cnpj|Invalid CNPJ|CNPJ inválido|CNPJ inválido
+	cnpj_is_required|CNPJ is required|O CNPJ é obrigatório|El CNPJ es requerido
+	invalid_cpf|Invalid CPF|CPF inválido|CPF inválido
+	cpf_is_required|CPF is required|O CPF é obrigatório|El CPF es requerido
+<=
+
+success=>
+<=
+
+warning =>
+	required_country||Campo país obrigatório
+<=
+
+confirm =>
+<=

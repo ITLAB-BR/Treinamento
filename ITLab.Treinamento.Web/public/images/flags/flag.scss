@@ -1,0 +1,51 @@
+﻿$path: '';
+$ext: '.png';
+
+
+@mixin set-flag($countryCode,$countryName) {
+    $pathSize: $path+'16/';
+
+    &.flag-16 {
+        #{'&.flag-'+$countryCode} {
+            $img: $pathSize+$countryName+$ext;
+            background-image: url($img);
+        }
+    }
+
+    $pathSize: $path+'32/';
+
+    &.flag-32 {
+        #{'&.flag-'+$countryCode} {
+            $img: $pathSize+$countryName+$ext;
+            background-image: url($img);
+        }
+    }
+}
+
+.flag {
+    display: inline-block;
+    margin: 0;
+
+    &.flag-16 {
+        $pathSize: $path+'16/';
+        background-position: 0 1px;
+        background-repeat: no-repeat;
+        height: 15px;
+        width: 16px;
+        margin: -5px auto -2px;
+    }
+
+    &.flag-32 {
+        $pathSize: $path+'32/';
+        background-position: 0 3px;
+        background-repeat: no-repeat;
+        height: 30px;
+        width: 32px;
+    }
+
+    @include set-flag('pt-BR','Brazil');
+    @include set-flag('en','United-Kingdom');
+    @include set-flag('es','Spain');
+
+    @include set-flag('','Unknown');
+}

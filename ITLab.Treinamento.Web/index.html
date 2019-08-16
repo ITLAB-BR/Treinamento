@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html class="no-js" ng-app="itlabtreinamento">
+
+<head>
+    <meta charset="utf-8">
+    <title>IT Lab Template Web API</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- CSS Básico -->
+    <link href="public/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- CSS Plugins -->
+    <link href="public/plugins/metisMenu/dist/metisMenu.min.css" rel="stylesheet" />
+    <link href="public/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="public/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet" />
+    <link href="public/plugins/angular-ui-grid/ui-grid.min.css" rel="stylesheet" />
+    <link href="public/plugins/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="public/plugins/toastr-master/build/toastr.min.css" rel="stylesheet" />
+    <link href="public/plugins/ladda/ladda-themeless.min.css" rel="stylesheet" />
+    <link href="public/plugins/animate/animate.css" rel="stylesheet" />
+    <link href="public/plugins/angular-xeditable/dist/css/xeditable.min.css" rel="stylesheet" />
+    <link href="public/plugins/ui-select/select.min.css" rel="stylesheet" />
+    <link href="public/plugins/colorpicker/colorpicker.css" rel="stylesheet" />
+    <link href="public/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="public/plugins/bootstrap-daterangepicker-master/daterangepicker.css" rel="stylesheet" />
+    <link href="public/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+
+    <!-- Public -->
+    <link href="public/images/flags/flag.css" rel="stylesheet" />
+
+    <!-- CSS Core -->
+    <link href="public/styles/core.css" rel="stylesheet" />
+
+    <!-- CSS Custom -->
+    <link href="public/styles/custom.css" rel="stylesheet" />
+    <link href="public/styles/tree-table.css" rel="stylesheet" />
+    <link href="public/styles/skins/nrs.css" rel="stylesheet" />
+    <link href="public/styles/skins/atlas.css" rel="stylesheet" />
+    <link href="public/styles/skins/santander.css" rel="stylesheet" />
+</head>
+
+<body class="{{layoutSkin}}">
+    <div ui-view=""></div>
+
+    <!-- JavaScript Básico -->
+    <script src="public/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular-->
+    <script src="public/plugins/angular/angular.min.js"></script>
+    <script src="public/plugins/angular-animate/angular-animate.min.js"></script>
+    <script src="public/plugins/angular-cookies/angular-cookies.min.js"></script>
+    <script src="public/plugins/angular-resource/angular-resource.min.js"></script>
+    <script src="public/plugins/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="public/plugins/angular-touch/angular-touch.min.js"></script>
+    <script src="public/plugins/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="public/plugins/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="public/plugins/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="public/plugins/angular-xeditable/dist/js/xeditable.min.js"></script>
+    <script src="public/plugins/angular-filter/angular-filter.min.js"></script>
+    <script src="public/plugins/ngMask/ngMask.js"></script>
+
+    <!-- Menu -->
+    <script src="public/plugins/metisMenu/src/metisMenu.js"></script>
+
+    <!-- Loading... superior-->
+    <script src="public/plugins/PACE/pace.min.js"></script>
+
+    <!-- Plugins-->
+    <script src="public/plugins/ui-select/select.min.js"></script>
+    <script src="public/plugins/ocLazyLoad/ocLazyLoad.js"></script>
+    <script src="public/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="public/plugins/ngSlimscroll/src/js/min/ngSlimscroll.js"></script>
+    <script src="public/plugins/toastr-master/build/toastr.min.js"></script>
+    <script src="public/plugins/i18n/i18next-1.11.2.min.js"></script>
+    <script src="public/plugins/ladda/spin.min.js"></script>
+    <script src="public/plugins/ladda/ladda.min.js"></script>
+    <script src="public/plugins/ladda/angular-ladda.min.js"></script>
+    <script src="public/plugins/lodash/dist/lodash.min.js"></script>
+    <script src="public/plugins/colorpicker/bootstrap-colorpicker-module.js"></script>
+
+    <!-- DataTables -->
+    <script src="public/plugins/dataTables/datatables.min.js"></script>
+    <script src="public/plugins/dataTables/angular-datatables.buttons.min.js"></script>
+    <script src="public/plugins/dataTables/angular-datatables.min.js"></script>
+
+    <!-- MomentJs -->
+    <script src="public/plugins/moment/moment.js"></script>
+    <script src="public/plugins/moment/moment-timezone.js"></script>
+    <script src="public/plugins/moment/locales/pt-br.js"></script>
+    <script src="public/plugins/moment/locales/es.js"></script>
+
+    <!-- Date Range Picker -->
+    <script src="public/plugins/bootstrap-daterangepicker-master/daterangepicker.js"></script>
+    <script src="public/plugins/angular-daterangepicker-master/js/angular-daterangepicker.js"></script>
+
+    <!-- NumeralJs -->
+    <script src="public/plugins/numeral/min/numeral.min.js"></script>
+    <script src="public/plugins/numeral/min/languages/pt-br.min.js"></script>
+    <script src="public/plugins/numeral/min/languages/en.min.js"></script>
+    <script src="public/plugins/numeral/min/languages/es.min.js"></script>
+
+    <!-- FullCalendar  -->
+    <script src="public/plugins/fullcalendar/calendar.js"></script>
+    <script src="public/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="public/plugins/fullcalendar/locale/pt-br.js"></script>
+    <script src="public/plugins/fullcalendar/locale/en.js"></script>
+    <script src="public/plugins/fullcalendar/locale/es.js"></script>
+
+    <!-- App Core -->
+    <script src="app/main.js"></script>
+
+    <!-- App Core - Config Angular -->
+    <script src="app/core/config/app.config.js"></script>
+    <script src="app/core/config/multilanguage.config.js"></script>
+    <script src="app/core/config/datatables.config.js"></script>
+    <script src="app/core/config/daterangepicker.config.js"></script>
+    <script src="app/core/config/fullcalendar.config.js"></script>
+
+    <!-- App Core - Filter Angular -->
+    <script src="app/filters/filesize.js"></script>
+    <script src="app/filters/html.js"></script>
+    <script src="app/filters/yesno.js"></script>
+    <script src="app/filters/moment.js"></script>
+    <script src="app/filters/numeral.js"></script>
+    <script src="app/filters/notification.js"></script>
+
+    <!-- App Core - Serviços Angular -->
+    <script src="app/core/services/authentication.service.prototype.js"></script>
+    <script src="app/core/services/commons.service.prototype.js"></script>
+    <script src="app/pages/notifications/list.service.prototype.js"></script>
+    <!--<script src="app/core/services/authentication.service.js"></script>
+    <script src="app/core/services/commons.service.js"></script>
+    <script src="app/pages/notifications/list.service.js"></script>-->
+
+    <script src="app/core/services/authorization.service.js"></script>
+    <script src="app/core/services/apiInterceptor.service.js"></script>
+    <script src="app/core/services/multilanguage.service.js"></script>
+    <script src="app/core/services/form.service.js"></script>
+    <script src="app/services/navigation.js"></script>
+
+    <!-- App Core - Diretivas Angular -->
+    <script src="app/core/directives/minimalizaSidebar.directive.js"></script>
+    <script src="app/core/directives/sideNavigation.directive.js"></script>
+    <script src="app/core/directives/statusLabel.directive.js"></script>
+    <script src="app/core/directives/picklist.directive.js"></script>
+    <script src="app/core/directives/treeTable.directive.js"></script>
+    <script src="app/core/directives/spinner.directive.js"></script>
+    <script src="app/core/directives/pageHeader.directive.js"></script>
+    <script src="app/core/directives/ngI18n.directive.js"></script>
+    <script src="app/core/directives/ngTime.directive.js"></script>
+    <script src="app/core/directives/moment.directive.js"></script>
+    <script src="app/core/directives/numeral.directive.js"></script>
+    <script src="app/core/directives/files.directive.js"></script>
+    <script src="app/core/directives/totalizer.directive.js"></script>
+
+    <script src="app/directives/elements/navigation.js"></script>
+    <script src="app/directives/elements/topnavbar.js"></script>
+    <script src="app/directives/elements/footer.js"></script>
+
+    <!-- App Core - Enums -->
+    <script src="app/core/enum/roles.enum.js"></script>
+
+    <!-- App Rotas Angular -->
+    <script src="app/routes/management.js"></script>
+    <script src="app/routes/core.js"></script>
+    <script src="app/routes/events.js"></script>
+    <script src="app/routes/examples.js"></script>
+    <script src="app/routes/health.js"></script>
+    <script src="app/routes/security.js"></script>
+    <script src="app/routes/settings.js"></script>
+
+</body>
+</html>

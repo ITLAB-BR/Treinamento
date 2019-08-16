@@ -1,0 +1,83 @@
+﻿<page-header page-title="page_head.notifications" breadcrumb="['nav.notifications']"></page-header>
+
+<div class="wrapper wrapper-content">
+    <div class="animated fadeInLeft" id="list">
+        <div class="mail-box-header">
+
+            <form class="pull-right mail-search">
+                <div class="input-group">
+                    <input type="text" class="form-control input-sm" ng-model="filter.$" ng-i18n-placeholder="commons.search_filter">
+                    <span class="input-group-addon"> <i class="fa fa-search"></i></span>
+                </div>
+            </form>
+            <h2><span ng-i18n="page.notifications.inbox"></span> ({{viewModel.listItems.length}})</h2>
+
+            <div class="mail-tools tooltip-demo m-t-md">
+                <div class="btn-group pull-right">
+                    <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i></button>
+                    <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i></button>
+                </div>
+                <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" ng-i18n-title="page.notifications.refresh_inbox" ng-click="viewModel.functions.refresh()"><i class="fa fa-refresh"></i></button>
+                <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" ng-i18n-title="page.notifications.mark_read" ng-click="viewModel.functions.markAsRead()" ng-show="viewModel.functions.hasSelectedNotifications()"><i class="fa fa-eye"></i></button>
+                <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" ng-i18n-title="label.remove" ng-click="viewModel.functions.remove()" ng-show="viewModel.functions.hasSelectedNotifications()"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </div>
+
+        <div class="mail-box">
+            <div ng-show="viewModel.listItems.length" id="table">
+                <table class="table table-hover table-mail">
+                    <tbody>
+                        <tr ng-class="item.readIn ? 'read':'unread'" ng-repeat="item in filtered = (viewModel.listItems | filter: filter)">
+                            <td class="check-mail">
+                                <div class="checkbox no-margins">
+                                    <input type="checkbox" ng-model="item.check" id="check{{$index}}" />
+                                    <label for="check{{$index}}"></label>
+                                </div>
+                            </td>
+                            <!--<td class="mail-ontact" ng-click="viewModel.read(item)"><a>{{item.sender}}</a></td>-->
+                            <td class="mail-subject" ng-click="viewModel.functions.read(item)"><span ng-bind-html="item.message | notification"></span></td>
+                            <td class="text-right mail-date" ng-moment="item.date" moment-format="calendar" format="{{item.date.isBefore(moment(), 'day')?'ll':'LT'}}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <totalizer length="filtered.length" />
+            </div>
+            <div class="row" ng-hide="viewModel.listItems.length">
+                <h3 class="well col-xs-4 col-xs-pull-4 col-xs-push-4 text-center gray-bg p-md b-r-md m-b-lg text-muted">
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span ng-i18n="page.notifications.no_notification"></span>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="note" role="dialog" class="modal fade in">
+        <div class="modal-dialog animated fadeInDown">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" ng-i18n="page.notifications.notification"></h4>
+                </div>
+                <div class="modal-body">
+                    <h3>{{viewModel.reading.title}}</h3>
+                    <h5>
+                        <span ng-i18n="page.notifications.from"></span>: {{viewModel.reading.sender}}
+                        <span class="pull-right" ng-moment="viewModel.reading.date" format="LLL"></span>
+                    </h5>
+                    <hr class="hr-line-solid m-b-lg" />
+                    <p class="small text-muted text-justify">
+                        {{viewModel.reading.note}}
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-danger btn-outline" type="button"
+                            ng-i18n="label.remove" ng-click="viewModel.remove(viewModel.reading)">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                    <button data-dismiss="modal" class="btn btn-white" type="button" ng-i18n="label.close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

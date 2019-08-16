@@ -1,0 +1,48 @@
+﻿<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div class="m-t-xl">
+        <h2 ng-i18n="page.account.edit_title"></h2>
+        <form class="m-t" role="form" ng-submit="viewModel.functions.saveItem()">
+            <div class="form-group">
+                <input type="text" disabled class="form-control" ng-model="viewModel.itemEditing.Login">
+            </div>
+            <div class="form-group">
+                <input type="email" disabled class="form-control" ng-i18n-placeholder="label.email" ng-model="viewModel.itemEditing.Email" />
+            </div>
+            <div class="form-group">
+                <input type="text" required class="form-control" ng-i18n-placeholder="label.name" ng-model="viewModel.itemEditing.Name">
+            </div>
+
+            <h3 ng-i18n="label.image"></h3>
+            <div class="form-group text-center">
+                <label class="btn btn-primary">
+                    <span ng-i18n="label.select_image"></span>
+                    <input type="file" id="fileUpload" class="form-control hide" ng-files="viewModel.itemEditing.image" />
+                </label>
+            </div>
+            <div class="form-group">
+                <span ng-hide="viewModel.itemEditing.Photo"
+                      ng-class="{'block': viewModel.itemEditing.Photo}"
+                      ng-i18n="{{viewModel.itemEditing.filesToUpload[0] ?'' :'label.no_img'}}"></span>
+
+                <div ng-show="viewModel.itemEditing.Photo">
+                    <img class="img-circle"
+                         ng-class="{'dimmed':viewModel.itemEditing.removePhoto}"
+                         ng-src="{{viewModel.itemEditing.Photo}}" width="48" height="48"/>
+
+                    <div class="checkbox checkbox-warning">
+                        <input id="removePhoto" type="checkbox" ng-model="viewModel.itemEditing.removePhoto">
+                        <label for="removePhoto" ng-i18n="label.no_img"></label>
+                    </div>
+                    <p class="text-warning" ng-show="viewModel.itemEditing.removePhoto">
+                        <i class="fa fa-exclamation-triangle"></i>
+                        <span ng-i18n="label.img_will_exclude"></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary block full-width m-b" ng-i18n="label.save"></button>
+            </div>
+        </form>
+    </div>
+</div>
