@@ -1,0 +1,21 @@
+﻿i18n=> | en | pt-BR | es
+
+empty_table | No data available in table | Nenhum dado encontrado | No se encontraron datos
+info | Showing _START_ to _END_ of _TOTAL_ entries | Mostrando de _START_ à _END_ do total de _TOTAL_ registros | Mostrando _START_ a _END_ de un total de _TOTAL_ registros
+info_empty | Showing 0 to 0 of 0 entries | Nenhum registro | No hay ningún registro
+info_filtered | (filtered from _MAX_ total entries) | (filtrado do total de _MAX_ registros) | (filtrado el total de _MAX_ registros)
+info_thousands | , | . | .
+length_menu | Show _MENU_ entries | Mostrar _MENU_ registros por página | Mostrar _MENU_ registros por página
+loading | Loading... | Carregando... | Cargando...
+processing | Processing... | Processando... | Cargando ...
+search | Filter from entries | Filtrar no resultado | Filtrar en los resultados
+zero | No matching records found | Pesquisa não retornou nenhum registro | Búsqueda sin registros
+pag_first | First | Primeiro | Primer
+pag_last | Last | Último | Última
+pag_next | Next | Próximo | Siguiente
+pag_prev | Previous | Anterior | Anterior
+sort_asc | : activate to sort column ascending | : ordenar coluna em ordem crescente | : columna de clasificación en orden ascendente
+sort_desc | : activate to sort column descending | : ordenar coluna em ordem decrescente | : columna de clasificación en orden descendente
+
+copy_title | Copy to clipboard | Área de transferência | Copiar al portapapeles
+copy_success | Copied %d rows to clipboard | Foi copiado %d linhas para a área de transferência | Copiado %d filas al portapapeles

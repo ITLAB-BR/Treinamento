@@ -1,0 +1,101 @@
+i18n=> | en | pt-BR | es
+
+interceptor=>
+	bad_request | It occurred a communication failure with the server. | Ocorreu uma falha na comunicação com o servidor. | No hubo un fallo en la comunicación con el servidor.
+	unauthorized | Unauthorized access | Acesso não autorizado | Acceso no autorizado
+	not_found | Page not found | Recurso não encontrado | Recurso no encontrado
+	expired_seccion | The seccion was expired | Sua sessão expirou | Tu sesión caducou
+	denied_access_source | Denied access from this source!!! | Acesso não autorizado à partir desta origem!!! | ¡¡¡El acceso no autorizado de este origen!!!
+<=
+
+error=>
+	error | Error | Erro | Error
+	fail | Fail | Falha | Falla
+	denied_access | Denied access | Acesso negado | Acceso denegado
+	get_generic | Fail to get data | Falha ao obter dados | No se ha podido obtener datos
+	save_generic | Fail to save data | Falha ao salvar os dados | Error al guardar los datos
+	import_generic | Fail to import data | Falha ao importar dados | Error al importar datos
+	delete_generic | Fail to delete entry | Falha ao excluir o registro | No se ha podido eliminar el registro
+	send_file_generic | There was an error to import the file(s) | Houve um erro ao importar o(s) arquivo(s) | Hubo un error al importar el archivo
+	execution_fail | If the problem keeps, contact the system admin | Se o problema persistir, contate o administrador do sistema | Si el problema persiste, contacte con el administrador del sistema
+	unexpected | It occurred an unexpected error. | Ocorreu um erro inesperado. | Se ha producido un error inesperado.
+	unknown | Unknown error | Erro desconhecido | Error desconocido
+	invalid_grant | The user name or password are wrong. | O nome do usuário ou senha estão incorretos. | El nombre de usuario o contraseña son incorrectos.
+	password_not_equals | The user name or password are wrong. | O nome do usuário ou senha estão incorretos. | El nombre de usuario o contraseña son incorrectos.
+	user_locked | This user is blocked! | Este usuário está bloqueado! | ¡Este usuario está bloqueado!
+	user_disabled | This user is inactive. | Este usuário está inativo! | ¡Este usuario no está activo!
+	user_requiresVerification | This user was not confirmed by e-mail or sms! | Este usuário não se confirmou via e-mail ou sms! | ¡Este usuario no ha confirmado vía e-mail o SMS!
+	save_profile | Profile cannot be saved. Try again. | Perfil não pode ser salvo. Tente novamente. | Perfil no puede ser salvado. Inténtalo de nuevo.
+	save_profile_permissions | The permissions for this profile can't be saved | As permissões deste perfil não puderam ser salvas. | Los permisos de este perfil no podrían salvarse.
+	save_profile_users | The users for this profile can't be saved | Os usuários para este perfil não puderam ser salvos. | Los usuarios de este perfil no podrían salvarse
+	save_user | Fail to save user's data. Try again. | Falha ao salvar dados do usuário. Tente novamente mais tarde. | Error al guardar los datos de usuario. Por favor, inténtelo de nuevo más tarde.
+	save_pass | Fail to save new password. Try again. | Falha ao salvar nova senha. Tente novamente mais tarde. | No se pudo guardar la nueva clave. Por favor, inténtelo de nuevo más tarde.
+	name_is_required | The name is required | O nome é obrigatório | El nombre es requerido
+	invalid_name | Invalid name | Nome inválido | Nombre invalido
+	description_is_required | The descriprition is required | A descrição é obrigatória | La descriptión es requerida
+	invalid_description | Invalid description | Descrição inválida | Descriptión inválida
+	code_is_required | The code is required | O código é obrigatório | El código es requerido
+	invalid_code | Invalid code | Código inválido | Código inválido
+	email_is_required | The e-mail is required | O e-mail é obrigatório | El correo es requerido
+	invalid_email | Please, insert a valid e-mail | Por favor, insira um email válido | Por favor, introduzca un correo válido
+	user_not_found | The user was not found! | O usuário não foi encontrado! | ¡No se encontró el usuario!
+	compare_pass | The passwords don't match! | As senhas digitadas não conferem! | ¡Las contraseñas no coinciden!
+	password_not_equals | The passwords don't match! | As senhas digitadas não conferem! | ¡Las contraseñas no coinciden!
+	incorrect_password | Incorrect password | Senha incorreta | Contraseña incorrecta
+	cannot_reuse_old_password | Cannot reuse old password | Você não pode reutilizar uma senha antiga | No se puede volver a utilizar una contraseña antigua
+	passwords_must_have_at_least_one_uppercase_('a'-'z') | Passwords must have at least one uppercase | A senha deve conter ao menos uma letra maiúscula | La contraseña debe contener al menos una letra mayúscula
+	passwords_must_have_at_least_one_lowercase_('a'-'z') | Passwords must have at least one lowercase | A senha deve conter ao menos uma letra minúscula | La contraseña debe contener al menos una letra minúscula
+	passwords_must_have_at_least_one_digit_('0'-'9') | Passwords must have at least one digit | A senha deve conter ao menos um dígito numérico | La contraseña debe contener al menos un dígito numérico
+	passwords_must_have_at_least_one_non_letter_or_digit_character | Passwords must have at least one special caracter | A senha deve conter ao menos um caracter especial | La contraseña debe contener al menos un carácter especial
+	password_is_not_expired | The password for this user ui not expired | A senha deste usuário não está expirada | La contraseña para el usuario no ha caducado
+	minimum_length | Passwords must be at least __x__ caracters | A senha deve ter no mímino __x__ caracteres | La contraseña debe tener al menos __x__ carácter
+	invalid_token | Invalid token | Token inválido | Inválida contador
+	login_already_exists | This login already taken | Este login já foi escolhido | Este login ha sido elegido
+	change_pass | Fail to change your password | Falha ao alterar a senha | No se pudo alterar la contraseña
+	send_pass | Fail to send a new password. Please, check your e-mail and try again. | Falha ao enviar uma nova senha. Por favor, confira o e-mail e tente novamente. | No se pudo enviar una nueva contraseña. Por favor, compruebe el correo electrónico y vuelva a intentarlo.
+	create_user | Fail to create user. Try again. | Falha ao criar usuário. Tente novamente mais tarde. | No se pudo crear el usuario. Por favor, inténtelo de nuevo más tarde.
+	list_profile | Fail to recover profile list. Please, try again. | Falha ao recuperar lista de perfis. Tente novamente mais tarde. | No se ha podido recuperar la lista de perfiles. Por favor, inténtelo de nuevo más tarde.
+	list_user | Fail to recover user list. Please, try again. | Falha ao recuperar lista de usuários. Tente novamente mais tarde. | No se ha podido recuperar la lista de usuarios. Por favor, inténtelo de nuevo más tarde.
+	get_user | Fail to recover user's data. Try again. | Falha ao recuperar os dados do usuário. Tente novamente mais tarde. | No se pudieron recuperar los datos del usuario. Por favor, inténtelo de nuevo más tarde.
+	no_workbook | It doesn't selected no workbook | Não foi selecionado nenhuma planilha | No hay seleccionado ninguna hoja del cálculo
+	smtp-default-from-address-invalid | Invalid SMTP default from address | Endereço de e-mail inválido para o remetente padrão | Dirección de correo electrónico no válida para el remitente predeterminado
+	smtp-pickup-directory-location | Inválid pick up directory location | Endereço local para gravar os e-mails inválido | Dirección local para registrar los mensajes no válidos
+	smtp-server-host | Invalid SMTP server host | Endereço do servidor de SMTP inválido | Dirección del servidor SMTP no válido
+	smtp-server-port | Invalid SMTP server host port | Porta do servidor de SMTP inválida | Puerto de servidor SMTP no válido
+	smtp-credentials-username | Invalid SMTP username | Usuário do servidor de SMTP inválido | Usuario del servidor SMTP no válido
+	smtp-credentials-password | Invalid SMTP password | Senha do servidor de SMTP inválida | Contraseña de servidor SMTP no válida
+<=
+
+success=>
+	success | Success | Sucesso | Éxito
+	save_generic | Saved successfully | Salvo com sucesso | Guardado con éxito
+	delete_generic | Deleted successfully | Deletado com sucesso | eliminado con éxito
+	change_pass | Your password has changed successfully! | Senha alterada com sucesso! | ¡Contraseña cambiada con éxito!
+	send_pass | It was sent instructions for provided e-mail | Foi enviado instruções para o e-mail fornecido | Se envió instrucciones al correo electrónico proporcionado
+	save_profile | Profile has changed | Perfil alterado | Perfil cambiado
+	save_profile_permissions | Permissions were updated | Permissões atualizadas | Permisos actualizados
+	save_profile_users | The users for this profile were updateted | Os usuários para este perfil foram atualizados | Los usuarios de este perfil se actualizan
+	save_user | The user was saved | O usuário foi salvo | El usuario se salvó
+	create_user | The user was been created successfully | O usuário foi criado com sucesso! | ¡El usuario se creó con éxito!
+	import | Importation finished successfully | Importação realizada com sucesso | ¡Importación realizado com éxito!
+	request_generate_file | Request file generation is successfully. Wait notification | Solicitação de geração de arquivo enviada com sucesso. Aguarde notificação
+<=
+
+warning=>
+	warning | Warning | Alerta | Alerta
+	user_ad_cannot_change_pass | The user type don't allow password change/reset. Please, contact the system administrator. | O tipo de usuário active directory não permite alteração/redefinição de senha. Por favor, contate o administrador do sistema. | El tipo de usuario de Active Directory no permite el cambio / restablecimiento de contraseñas. Póngase en contacto con el administrador del sistema.
+	settings_authentication_type | Authentication type needs | Tipo de autenticação obrigatória | Tipo de autenticación obligatoria
+	invalid_email | Please, insert a valid e-mail | Por favor, insira um email válido | Por favor, introduzca un correo válido
+	user_password_expired | Your password expired. Please, redefine it. | Senha expirada. Por favor, redefina a senha. | Contraseña caducada. Por favor, restablecer su contraseña.
+	all_fields_required | All fields are required | Todos os campos são obrigatórios | Todos los campos son obligatorios
+	log_not_found | Log file not found for the selected date | Arquivo de log não encontrado para data selecionada | Archivo del registro no encontrado para la fecha seleccionada
+<=
+
+confirm=>
+	delete | Delete confirmation | Confirmação de exclusão | Confirmación de la eliminación
+	sure_delete | Are you sure you want delete this item? | Certeza que deseja excluir este item? | ¿Seguro que quiere eliminar este artículo?
+	delete_file | Are you sure you want delete this file permanently? | Você tem certeza de que deseja excluir este arquivo permanentemente? | ¿Seguro que quiere eliminar este archivo permanentemente?
+	discard_changes | There are changes not saved! | Há alterações não salvas! | ¡Existe cambio no guardado!
+	sure_discard_changes | If you continue, the changes will be discarded | Se você continuar, as alterações serão descartadas | Si usted continúa, lo cambio será descardado
+<=
+

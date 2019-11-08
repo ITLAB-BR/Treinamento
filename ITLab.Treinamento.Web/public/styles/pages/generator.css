@@ -1,0 +1,20 @@
+﻿.show-action-on-hover .show-action {
+    visibility: hidden;
+    display: inline-flex;
+}
+
+.show-action-on-hover:hover .show-action {
+    visibility: visible;
+}
+
+.truncate {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.editable-mini + .editable-wrap .editable-input {
+    width: 80px;
+}

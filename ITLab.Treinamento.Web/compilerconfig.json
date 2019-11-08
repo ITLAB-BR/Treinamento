@@ -1,0 +1,26 @@
+﻿[
+  {
+    "outputFile": "public/images/flags/flag.css",
+    "inputFile": "public/images/flags/flag.scss"
+  },
+  {
+    "outputFile": "styles/core/style.css",
+    "inputFile": "styles/_scss/style/style.scss"
+  },
+  {
+    "outputFile": "styles/custom/custom.css",
+    "inputFile": "styles/_scss/custom/custom.scss"
+  },
+  {
+    "outputFile": "styles/custom/skins/nrs.css",
+    "inputFile": "styles/_scss/custom/skins/nrs.scss"
+  },
+  {
+    "outputFile": "styles/custom/skins/atlas.css",
+    "inputFile": "styles/_scss/custom/skins/atlas.scss"
+  },
+  {
+    "outputFile": "styles/custom/skins/santander.css",
+    "inputFile": "styles/_scss/custom/skins/santander.scss"
+  }
+]

@@ -1,0 +1,50 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation" id="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element text-center">
+                    <!--better: width <= 170px-->
+                    <div class="title">IT Lab</div>
+                    <!--<img ng-src="{{::$root.generalConfig.logoImg.menu}}" ng-i18n-title="app.short_name" />-->
+                </div>
+                <div class="logo-element">
+                    IT Lab
+                    <!-- better: heigth = 50px -->
+                    <!--<img ng-src="{{::$root.generalConfig.logoImg.miniMenu}}" ng-i18n-title="app.short_name" />-->
+                </div>
+                <div class="profile-element" uib-dropdown>
+                    <img class="img-circle" ng-src="{{::loggedUserAvatar}}" ng-show="loggedUserAvatar != null" width="48" height="48">
+                    <a uib-dropdown-toggle>
+                        <span class="clear text-center">
+                            <span class="block m-t-xs"> <strong class="font-bold">{{::loggedUser}} <b class="caret"></b></strong></span>
+                        </span>
+                    </a>
+                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                        <li><a ui-sref="change-password" ng-i18n="nav.change_pass"></a></li>
+                        <li><a ui-sref="my-account" ng-i18n="nav.edit_account"></a></li>
+                        <li class="divider"></li>
+                        <li><a ui-sref="login" ng-click="signout()"><i class="fa fa-sign-out"></i> <span ng-i18n="nav.logout"></span></a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li ui-sref-active="active" ng-repeat="item in menu">
+                <a ng-if="!item.items.length && userHasPermissionInRoles(item.roles)" ui-sref="{{item.name}}">
+                    <i class="fa fa-width-fixed fa-{{item.icon}}"></i>
+                    <span class="nav-label" ng-i18n="{{item.title}}"></span>
+                </a>
+
+                <a ng-if="item.items.length && userHasPermissionInRoles(item.roles)" ui-sref="{{item.name}}">
+                    <i class="fa fa-width-fixed fa-{{item.icon}}"></i>
+                    <span class="nav-label" ng-i18n="{{item.title}}"></span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-if="item.items.length">
+                    <li ui-sref-active="active" ng-repeat="subitem in item.items">
+                        <a ui-sref="{{subitem.name}}" ng-i18n="{{subitem.title}}" ng-if="userHasPermissionInRoles(subitem.roles)"></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

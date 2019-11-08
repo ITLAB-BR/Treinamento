@@ -1,0 +1,336 @@
+﻿<page-header page-title="page_head.general_settings" breadcrumb="['nav.settings', 'nav.general']"></page-header>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox">
+        <div class="ibox-content">
+            <form class="panel-body" ng-submit="viewModel.functions.saveItem()" >
+                <section id="layout">
+                    <h3 class="m-b" ng-i18n="page.general_settings.layout"></h3>
+
+                    <div class="form-group">
+                        <label class="control-label" ng-i18n="page.general_settings.skin"></label>
+                        <div>
+                            <div class="radio radio-inline">
+                                <input id="default" name="skin" ng-model="viewModel.itemEditing.LayoutSkin" type="radio" value="">
+                                <label for="default" ng-i18n="label.default"></label>
+                            </div>
+                            <div class="radio radio-inline radio-blue">
+                                <input id="blue" name="skin" ng-model="viewModel.itemEditing.LayoutSkin" type="radio" value="skin-1">
+                                <label for="blue" ng-i18n="page.general_settings.blue"></label>
+                            </div>
+                            <div class="radio radio-inline radio-yellow">
+                                <input id="yellow" name="skin" ng-model="viewModel.itemEditing.LayoutSkin" type="radio" value="skin-3">
+                                <label for="yellow" ng-i18n="page.general_settings.yellow"></label>
+                            </div>
+                            <div class="radio radio-inline radio-green">
+                                <input id="green" name="skin" ng-model="viewModel.itemEditing.LayoutSkin" type="radio" value="md-skin">
+                                <label for="green" ng-i18n="page.general_settings.green"></label>
+                            </div>
+                            <div class="radio radio-inline radio-denim">
+                                <input id="grey" name="skin" ng-model="viewModel.itemEditing.LayoutSkin" type="radio" value="skin-grey">
+                                <label for="grey" ng-i18n="page.general_settings.grey"></label>
+                            </div>
+                            <div class="radio radio-inline radio-red">
+                                <input id="atlas" name="skin" ng-model="viewModel.itemEditing.LayoutSkin" type="radio" value="skin-atlas">
+                                <label for="atlas" ng-i18n="Atlas"></label>
+                            </div>
+                            <button type="button" class="btn btn-info pull-right" ng-click="viewModel.functions.preview(viewModel.itemEditing.LayoutSkin)" ng-i18n="label.preview"></button>
+                        </div>
+                    </div>
+
+                    <hr class="hr-line-dashed" />
+                </section>
+
+                <section id="password">
+                    <h3 class="m-b" ng-i18n="label.pass"></h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" ng-i18n="page.general_settings.pass_required"></label>
+                                <div class="checkbox">
+                                    <input ng-model="viewModel.itemEditing.PasswordRequireDigit" type="checkbox" id="digit">
+                                    <label for="digit" ng-i18n="page.general_settings.digit"></label>
+                                </div>
+                                <div>
+                                    <div class="checkbox">
+                                        <input ng-model="viewModel.itemEditing.PasswordRequireLowercase" type="checkbox" id="lower">
+                                        <label for="lower" ng-i18n="page.general_settings.lowercase"></label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="checkbox">
+                                        <input ng-model="viewModel.itemEditing.PasswordRequireUppercase" type="checkbox" id="upper">
+                                        <label for="upper" ng-i18n="page.general_settings.uppercase"></label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="checkbox">
+                                        <input ng-model="viewModel.itemEditing.PasswordRequireNonLetterOrDigit" type="checkbox" id="special">
+                                        <label for="special" ng-i18n="page.general_settings.special_char"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" ng-i18n="page.general_settings.minimum_length"></label>
+                                <div><input ng-model="viewModel.itemEditing.PasswordRequiredMinimumLength" class="form-control" type="number" max="50" min="1" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">
+                                    <span ng-i18n="page.general_settings.history_limit"></span>
+                                    <span ng-i18n-helper="page.general_settings.history_limit_helper"></span>
+                                </label>
+                                <div><input ng-model="viewModel.itemEditing.PasswordHistoryLimit" class="form-control" type="number" max="50" min="1" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">
+                                    <span ng-i18n="page.general_settings.token_expire_in"></span>
+                                    <span ng-i18n-helper="page.general_settings.token_expire_in_helper"></span>
+                                </label>
+                                <div>
+                                    <div class="input-group">
+                                        <input ng-model="viewModel.itemEditing.AccessTokenExpireTimeSpanInMinutes" class="form-control" type="number" max="{{60*24*7}}" min="1" />
+                                        <span class="input-group-addon" ng-i18n="commons.minutes"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">
+                                    <span ng-i18n="page.general_settings.pass_expire_in"></span>
+                                    <span ng-i18n-helper="page.general_settings.pass_expire_in_helper"></span>
+                                </label>
+                                <div>
+                                    <div class="input-group">
+                                        <input ng-model="viewModel.itemEditing.PasswordExpiresInDays" class="form-control" type="number" max="{{60*24*365}}" min="0" />
+                                        <span class="input-group-addon" ng-i18n="commons.days"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr-line-dashed" />
+                </section>
+
+                <section id="accountBlock">
+                    <h3 class="m-b" ng-i18n="page.general_settings.lockout_account"></h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="lockoutDefault" ng-i18n="page.general_settings.enabled_by_default"></label>
+                                <div>
+                                    <div class="onoffswitch">
+                                        <input ng-model="viewModel.itemEditing.UserLockoutEnabledByDefault" type="checkbox" class="onoffswitch-checkbox" id="lockoutDefault">
+                                        <label for="lockoutDefault" class="onoffswitch-label"><span class="onoffswitch-inner"></span><span class="onoffswitch-switch"></span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" ng-show="viewModel.itemEditing.UserLockoutEnabledByDefault">
+                            <div class="form-group">
+                                <label class="control-label" ng-i18n="page.general_settings.max_failed"></label>
+                                <div>
+                                    <input ng-model="viewModel.itemEditing.MaxFailedAccessAttemptsBeforeLockout" class="form-control" type="number" max="50" min="1"
+                                           ng-disabled="!viewModel.itemEditing.UserLockoutEnabledByDefault"
+                                           ng-required="viewModel.itemEditing.UserLockoutEnabledByDefault" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" ng-i18n="page.general_settings.default_lockout"></label>
+                                <div>
+                                    <div class="input-group">
+                                        <input ng-model="viewModel.itemEditing.DefaultAccountLockoutTimeInMinutes" class="form-control" type="number" min="1" max="{{60*24*7}}"
+                                               ng-disabled="!viewModel.itemEditing.UserLockoutEnabledByDefault"
+                                               ng-required="viewModel.itemEditing.UserLockoutEnabledByDefault" />
+                                        <span class="input-group-addon" ng-i18n="commons.minutes"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr-line-dashed" />
+                </section>
+
+                <section id="authenticationType">
+                    <h3 class="m-b" ng-i18n="page.general_settings.authenticate"></h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="db" ng-i18n="label.db"></label>
+                                <div>
+                                    <div class="onoffswitch">
+                                        <input id="db" ng-model="viewModel.itemEditing.AuthenticateDataBase" type="checkbox" class="onoffswitch-checkbox" />
+                                        <label for="db" class="onoffswitch-label">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="ad" ng-i18n="label.ad"></label>
+                                <div>
+                                    <div class="onoffswitch">
+                                        <input ng-model="viewModel.itemEditing.AuthenticateActiveDirectory" type="checkbox" class="onoffswitch-checkbox" id="ad">
+                                        <label for="ad" class="onoffswitch-label">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr-line-dashed" />
+                </section>
+
+                <section ng-show="viewModel.itemEditing.AuthenticateActiveDirectory" id="ActiveDirectoryOptions">
+                    <h3 class="m-b" ng-i18n="label.ad"></h3>
+                    <div class="form-group">
+                        <div>
+                            <div class="radio">
+                                <input ng-model="viewModel.itemEditing.ActiveDirectoryType" type="radio" id="local" value="{{viewModel.activeDirectoryTypes.local}}">
+                                <label for="local" ng-i18n="label.local"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <div class="radio">
+                                <input ng-model="viewModel.itemEditing.ActiveDirectoryType" type="radio" id="server" value="{{viewModel.activeDirectoryTypes.server}}">
+                                <label for="server" ng-i18n="label.server"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="viewModel.itemEditing.ActiveDirectoryType == viewModel.activeDirectoryTypes.server">
+                        <div class="form-group">
+                            <label class="control-label" ng-i18n="page.general_settings.domain"></label>
+                            <div>
+                                <input ng-model="viewModel.itemEditing.ActiveDirectoryDomain" class="form-control" type="text"
+                                       ng-disabled="!viewModel.itemEditing.AuthenticateActiveDirectory"
+                                       ng-required="viewModel.itemEditing.AuthenticateActiveDirectory" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" ng-i18n="page.general_settings.dn"></label>
+                            <div>
+                                <input ng-model="viewModel.itemEditing.ActiveDirectoryDN" class="form-control" type="text"
+                                       ng-disabled="!viewModel.itemEditing.AuthenticateActiveDirectory"
+                                       ng-required="viewModel.itemEditing.AuthenticateActiveDirectory" />
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr-line-dashed" />
+                </section>
+
+                <section id="email">
+                    <h3 class="m-b" ng-i18n="page.general_settings.email_settings"></h3>
+
+                    <div class="form-group">
+                        <label class="control-label" ng-i18n="page.general_settings.default_from_address"></label>
+                        <div>
+                            <input ng-model="viewModel.itemEditing.SMTPDefaultFromAddress" class="form-control" type="text"
+                                   ng-required="true" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" ng-i18n="page.general_settings.delivery_method"></label>
+                        <div>
+                            <div class="radio">
+                                <input ng-model="viewModel.itemEditing.SMTPDeliveryMethod" type="radio" id="network" value="0">
+                                <label for="network" ng-i18n="page.general_settings.network"></label>
+                            </div>
+                            <div class="radio">
+                                <input ng-model="viewModel.itemEditing.SMTPDeliveryMethod" type="radio" id="specified" value="1">
+                                <label for="specified" ng-i18n="page.general_settings.pickup_directory_location"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="viewModel.itemEditing.SMTPDeliveryMethod == 1">
+                        <label class="control-label" ng-i18n="page.general_settings.pickup_directory_location"></label>
+                        <div>
+                            <input ng-model="viewModel.itemEditing.SMTPPickupDirectoryLocation" class="form-control" type="text"
+                                   ng-required="viewModel.itemEditing.SMTPDeliveryMethod == 1" />
+                        </div>
+                    </div>
+
+                    <div ng-show="viewModel.itemEditing.SMTPDeliveryMethod == 0">
+                        <div class="form-group">
+                            <label class="control-label" ng-i18n="page.general_settings.server_host"></label>
+                            <div>
+                                <input ng-model="viewModel.itemEditing.SMTPServerHost" class="form-control" type="text"
+                                       ng-required="viewModel.itemEditing.SMTPDeliveryMethod == 0" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" ng-i18n="page.general_settings.server_port"></label>
+                            <div>
+                                <input ng-model="viewModel.itemEditing.SMTPServerPort" class="form-control" type="number"
+                                       ng-required="viewModel.itemEditing.SMTPDeliveryMethod == 0" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="db" ng-i18n="page.general_settings.enable_ssl"></label>
+                            <div>
+                                <div class="onoffswitch">
+                                    <input id="ssl" ng-model="viewModel.itemEditing.SMTPEnableSsl" type="checkbox" class="onoffswitch-checkbox" />
+                                    <label for="ssl" class="onoffswitch-label">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" ng-i18n="page.general_settings.credentials_username"></label>
+                            <div>
+                                <input ng-model="viewModel.itemEditing.SMTPCredentialsUsername" class="form-control" type="text"
+                                       ng-required="viewModel.itemEditing.SMTPDeliveryMethod == 0" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" ng-i18n="page.general_settings.credentials_password"></label>
+                            <div>
+                                <input ng-model="viewModel.itemEditing.SMTPCredentialsPassword" class="form-control" type="password" autocomplete="off"
+                                       ng-required="viewModel.itemEditing.SMTPDeliveryMethod == 0" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="hr-line-dashed" />
+                </section>
+
+                <section id="upload">
+                    <h3 class="m-b" ng-i18n="label.upload"></h3>
+
+                    <div class="form-group">
+                        <label class="control-label" ng-i18n="label.directory_temp_upload"></label>
+                        <div>
+                            <input ng-model="viewModel.itemEditing.UploadDirectoryTemp" class="form-control" type="text" required />
+                        </div>
+                    </div>
+
+                    <hr class="hr-line-dashed" />
+                </section>
+
+                <div class="row">
+                    <div class="alert alert-warning">
+                        Ao alterar estas configurações é recomendável <strong>reiniciar o back-end (API)</strong> para que as novas configurações sejam carregadas.
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <button type="submit" class="btn btn-primary" ng-i18n="label.save"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

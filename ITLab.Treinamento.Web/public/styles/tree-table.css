@@ -1,0 +1,37 @@
+.tree-table .panel-heading {
+    padding: 3px 8px !important;
+    border-bottom-width: 0 !important;
+}
+
+.tree-table .panel-heading h1.panel-title,
+.tree-table .panel-heading h2.panel-title,
+.tree-table .panel-heading h3.panel-title,
+.tree-table .panel-heading h4.panel-title,
+.tree-table .panel-heading h5.panel-title,
+.tree-table .panel-heading h6.panel-title {
+    margin-top: 2px;
+}
+
+.tree-table .panel {
+    margin-bottom: -1px;
+}
+
+.tree-table .panel,
+.tree-table .panel .panel-heading {
+    border-radius: 0;
+}
+
+.tree-table .panel-group {
+    margin-bottom: 0;
+}
+
+.tree-table .panel-group .panel {
+    margin: -1px -1px -1px 15px;
+}
+
+.tree-table .content-collapse {
+    margin-top: -1px;
+}
+
+
+/*# sourceMappingURL=tree-table.css.map */
