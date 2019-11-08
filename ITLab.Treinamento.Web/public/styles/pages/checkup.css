@@ -1,9 +1,0 @@
-﻿.result > .success,
-.result > .fail {
-    display: none;
-}
-
-.success > .success,
-.fail > .fail {
-    display: block;
-}
